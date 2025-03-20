@@ -42,20 +42,18 @@ class FibonacciIterator:
             return self.current_value
         raise StopIteration
        
-   
-if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
-
-    n = int(input().strip())
+# This is where the code runs
+# This is a list of values for the variable N
+test_cases_n = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20]    
    
+for n in test_cases_n:
     result = FibonacciIterator(n)
-   
-    if type(result).__name__ != "FibonacciIterator":
-        fptr.write('Class is not implemented properly\n')
-     
+    result_string = ""
+
     for num in result:
-        fptr.write(str(num) + '\n')
+        result_string += " " + str(num)
 
-
-    fptr.close()
+    print("The Fibonacci result for N =", n, "is:")
+    print(result_string)   
+ 
